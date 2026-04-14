@@ -7,7 +7,6 @@ from State.State import Register
 
 menuRouter = Router()
 
-
 @menuRouter.message(CommandStart())
 async def start_command(m: Message, state: FSMContext):
     await m.answer(f"Assalomu alaykum hush kelibsiz: {m.from_user.full_name}")
