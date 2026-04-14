@@ -6,7 +6,6 @@ from Data.config import DB_URL
 
 engine = create_engine(DB_URL)
 
-
 class Base(DeclarativeBase):
     pass
 
