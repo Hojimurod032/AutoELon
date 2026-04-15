@@ -7,3 +7,8 @@ class Register(StatesGroup):
     contact = State()
 
 
+class Car(StatesGroup):
+    title = State()
+    age = State()
+    price = State()
+    user_number = State()

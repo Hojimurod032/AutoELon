@@ -6,12 +6,14 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from Data.config import BOT_TOKEN
+from Handles.Ad import ad_router
 from Handles.Menu import menuRouter
 
 
 async def main() -> None:
     dp = Dispatcher()
     dp.include_router(menuRouter)
+    dp.include_router(ad_router)
     bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     await dp.start_polling(bot)
 

@@ -10,7 +10,7 @@ class Base(DeclarativeBase):
     pass
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = 'userss'
     id : Mapped[int] = Column(Integer, primary_key=True)
     tg_id : Mapped[int] = mapped_column( BigInteger , unique=True)
     name: Mapped[str]
@@ -24,5 +24,5 @@ class Cars(Base):
     age : Mapped[int]
     price : Mapped[float]
     user_number : Mapped[str]
-    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
+    user_id: Mapped[int] = mapped_column(BigInteger,ForeignKey("userss.tg_id"))
 Base.metadata.create_all(engine)
