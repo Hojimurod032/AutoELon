@@ -1,7 +1,7 @@
 FROM python:3.12-slim
 WORKDIR /app
 
-COPY requirements.txt .
+COPY req.text .
 RUN pip install req.text
 
 COPY . .
