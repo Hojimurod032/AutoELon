@@ -7,20 +7,16 @@ from Keyboard.Reply import main_menu
 from State.State import Car
 
 ad_router = Router()
-
-
 @ad_router.message(F.text == "📢 E’lon joylash")
 async def add_cars(m: Message, state: FSMContext):
     await m.answer("🚗 Moshinani nomini kiriting: ", reply_markup=ReplyKeyboardRemove())
     await state.set_state(Car.title)
-
 
 @ad_router.message(Car.title)
 async def state_title(m: Message, state: FSMContext):
     await state.update_data(title=m.text)
     await m.answer("📅 Moshinani yilini kiriting: ")
     await state.set_state(Car.age)
-
 
 @ad_router.message(Car.age)
 async def state_age(m: Message, state: FSMContext):

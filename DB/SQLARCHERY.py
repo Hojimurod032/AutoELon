@@ -3,7 +3,6 @@ from sqlalchemy.orm import DeclarativeBase, Mapped
 from sqlalchemy.testing.schema import mapped_column # noqa
 from Data.config import DB_URL
 
-
 engine = create_engine(DB_URL)
 
 class Base(DeclarativeBase):

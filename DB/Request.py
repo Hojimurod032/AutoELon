@@ -3,12 +3,10 @@ from sqlalchemy.orm import Session
 
 from DB.SQLARCHERY import engine, User, Cars
 
-
 def get_user(tg_id):
     with Session(engine) as session:
         user = session.execute(select(User).where(User.tg_id == tg_id)).scalar()
         return user
-
 
 def save_user(tg_id, name, age, number):
     with Session(engine) as session:
